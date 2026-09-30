@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickAlert | Police Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-mark">
+                🚨
+            </div>
+
+            <div class="logo-text">
+                <h2>QuickAlert</h2>
+                <p>Police Dashboard</p>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-label">
+            
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="#" class="nav-item active" id="dashboardNav">
+                <span class="nav-icon">📊</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a href="#" class="nav-item" id="liveAlertsNav">
+                <span class="nav-icon">🚨</span>
+                <span>Live Alerts</span>
+            </a>
+
+
+            <a href="#" class="nav-item" id="locationTrackingNav">
+                <span class="nav-icon">📍</span>
+                <span>Location Tracking</span>
+            </a>
+
+
+            <a href="#" class="nav-item" id="contactsNav">
+                <span class="nav-icon">👥</span>
+                <span>Contacts</span>
+            </a>
+
+
+            <a href="#" class="nav-item" id="analyticsNav">
+                <span class="nav-icon">📈</span>
+                <span>Analytics</span>
+            </a>
+
+        </nav>
+
+
+       <div class="sidebar-footer">
+    <p>QuickAlert Emergency Monitoring</p>
+</div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="header">
+
+            <div class="header-left">
+
+                <div class="header-title">
+
+                    <span class="header-icon">
+                        
+                    </span>
+
+                    <div>
+
+                        <h1>
+                            Emergency Dashboard
+                        </h1>
+
+                        <p>
+                            Monitor accident alerts and emergency information
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>System Online</strong>
+                    <small>Real-time monitoring active</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTACTS
+        ================================================== -->
+
+        <section
+            id="contactsSection"
+            class="dashboard-section"
+            style="display: none;">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-tag">
+                    
+                    </span>
+
+                    <h2>
+                        Emergency Contacts
+                    </h2>
+
+                    <p>
+                        Registered emergency contacts of users
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table class="alerts-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>User ID</th>
+                            <th>Contact Name</th>
+                            <th>Phone Number</th>
+                            <th>Added On</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="contactsTableBody">
+
+                        <tr>
+
+                            <td colspan="4">
+                                Loading contacts...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DASHBOARD STATISTICS
+        ================================================== -->
+
+        <section
+            class="stats-container"
+            id="dashboardStatsSection">
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon alert-icon">
+                        🚨
+                    </div>
+
+                    <span class="stat-label">
+                    
+                    </span>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <p>
+                        Active Alerts
+                    </p>
+
+                    <h2 id="activeAlerts">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon location-icon">
+                        📍
+                    </div>
+
+                    <span class="stat-label">
+                    
+                    </span>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <p>
+                        Locations
+                    </p>
+
+                    <h2 id="locations">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon contact-icon">
+                        👥
+                    </div>
+
+                    <span class="stat-label">
+                    
+                    </span>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <p>
+                        Emergency Contacts
+                    </p>
+
+                    <h2 id="contacts">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon analytics-icon">
+                        📈
+                    </div>
+
+                    <span class="stat-label">
+                        
+                    </span>
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <p>
+                        Total Alerts
+                    </p>
+
+                    <h2 id="totalAlerts">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LIVE ALERTS
+        ================================================== -->
+
+        <section
+            class="dashboard-section"
+            id="liveAlertsSection">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-tag alert-tag">
+                    
+                    </span>
+
+                    <h2>
+                        Accident Alerts
+                    </h2>
+
+                    <p>
+                        Recent accident alerts received from QuickAlert users
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="refresh-button"
+                    onclick="refreshAlerts()">
+
+                    <span>↻</span>
+                    Refresh
+
+                </button>
+
+            </div>
+
+
+
+            <div class="alert-table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Status</th>
+
+                            <th>User</th>
+
+                            <th>Location</th>
+
+                            <th>Alert Time</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="alertsTable">
+
+                        <tr>
+
+                            <td
+                                colspan="5"
+                                class="no-alerts">
+
+                                No accident alerts available
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ALERT DETAILS
+        ================================================== -->
+
+        <section
+            class="dashboard-section alert-details"
+            id="alertDetails"
+            style="display: none;">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-tag alert-tag">
+                        
+                    </span>
+
+                    <h2>
+                        Accident Alert Details
+                    </h2>
+
+                    <p>
+                        Complete information about the selected alert
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-button"
+                    onclick="closeAlertDetails()">
+
+                    ✕ Close
+
+                </button>
+
+            </div>
+
+
+
+            <!-- PERSONAL + MEDICAL -->
+
+            <div class="details-grid">
+
+
+                <!-- PERSONAL -->
+
+                <div class="information-card">
+
+                    <div class="information-card-header">
+
+                        <div class="information-icon">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Personal Information
+                            </h3>
+
+                            
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Name</span>
+
+                        <strong id="detailName">—</strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Age / DOB</span>
+
+                        <strong id="detailAgeDob">—</strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Gender</span>
+
+                        <strong id="detailGender">—</strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Phone</span>
+
+                        <strong id="detailPhone">—</strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Address</span>
+
+                        <strong id="detailAddress">—</strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Blood Group</span>
+
+                        <strong id="detailBloodGroup">—</strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MEDICAL -->
+
+                <div class="information-card">
+
+                    <div class="information-card-header">
+
+                        <div class="information-icon medical-icon">
+                            🏥
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Medical Information
+                            </h3>
+
+                           
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Medical Conditions</span>
+
+                        <strong id="detailMedical">—</strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Allergies</span>
+
+                        <strong id="detailAllergies">—</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EMERGENCY INFORMATION -->
+
+            <div class="information-card emergency-card">
+
+                <div class="information-card-header">
+
+                    <div class="information-icon emergency-icon">
+                        🚨
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Emergency Information
+                        </h3>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="emergency-grid">
+
+
+                    <div class="info-row">
+
+                        <span>Emergency Contacts</span>
+
+                        <strong id="detailContacts">—</strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Alert Time</span>
+
+                        <strong id="detailAlertTime">—</strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Alert Status</span>
+
+                        <strong
+                            id="detailStatus"
+                            class="status-badge">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Accident Location</span>
+
+                        <strong id="detailLocation">—</strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="mapButton"
+                    class="map-button">
+
+                    📍 View Accident Location
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LOCATION TRACKING
+        ================================================== -->
+
+        <section
+            class="dashboard-section"
+            id="locationTrackingSection">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-tag">
+            
+                    </span>
+
+                    <h2>
+                        Location Tracking
+                    </h2>
+
+                    <p>
+                        Accident locations received from the mobile application
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="map-placeholder">
+
+                <div class="map-background">
+
+                    <span class="map-icon">
+                        📍
+                    </span>
+
+                    <h3>
+                        Accident Location Tracking
+                    </h3>
+
+                    <p id="trackingLocation">
+                        No accident location selected
+                    </p>
+
+
+                    <button
+                        id="trackingMapButton"
+                        class="map-button"
+                        style="display: none;">
+
+                        📍 View on Google Maps
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ANALYTICS
+        ================================================== -->
+
+        <section
+            class="dashboard-section"
+            id="analyticsSection">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-tag">
+                
+                    </span>
+
+                    <h2>
+                        Analytics
+                    </h2>
+
+                    <p>
+                        Accident alert statistics and trends
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="analytics-chart-container">
+
+                <div class="analytics-header">
+
+                    <div>
+
+                        <h3>
+                            📊 Alert Trend
+                        </h3>
+
+                        <p class="analytics-description">
+                            Number of accident alerts received over time
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="alertTrendChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script
+        type="module"
+        src="script.js">
+    </script>
+
+</body>
+
+</html>
